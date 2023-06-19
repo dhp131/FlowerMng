@@ -24,7 +24,11 @@ public class FlowerManagement implements Serializable {
     }
 
     /**
-     * Add a flower
+     * Adds a new flower to the list of flowers. The method prompts the user to
+     * enter the flower's ID, name, import date, unit price, and category. The
+     * method checks if the entered ID is unique and if not, prompts the user to
+     * enter a unique ID. Once all the flower's details have been entered, the
+     * method creates a new Flower object and adds it to the list of flowers.
      */
     public void addFlower() {
         String id;
@@ -87,8 +91,11 @@ public class FlowerManagement implements Serializable {
     }
 
     /**
-     * Display ds flower
-     * @param flowers 
+     * Displays a list of flowers. The method prints out a table of flowers
+     * along with their details such as flower ID, flower name, import date,
+     * unit price, and category.
+     *
+     * @param flowers The list of flowers to display.
      */
     public void displayFlower(List<Flower> flowers) {
         System.out.println("------------------");

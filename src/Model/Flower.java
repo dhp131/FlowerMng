@@ -2,7 +2,8 @@ package Model;
 
 import java.io.Serializable;
 
-public class Flower implements Serializable{
+public class Flower implements Serializable {
+
     private static final long serialVersionUID = 1L;
     String id;
     String name;
@@ -14,12 +15,14 @@ public class Flower implements Serializable{
     }
 
     /**
+     * Constructs a new Flower object with the given id, name, import date, unit
+     * price, and category.
      *
-     * @param id
-     * @param name
-     * @param importDate
-     * @param unitPrice
-     * @param category
+     * @param id The unique identifier for this flower.
+     * @param name The name of this flower.
+     * @param importDate The date this flower was imported.
+     * @param unitPrice The price per unit for this flower.
+     * @param category The category this flower belongs to.
      */
     public Flower(String id, String name, String importDate, Double unitPrice, String category) {
         this.id = id;
@@ -110,7 +113,8 @@ public class Flower implements Serializable{
     }
 
     /**
-     * Show info của flower
+     * Prints the information of this Flower object to the console in a
+     * formatted manner.
      */
     public void showInfo() {
         String str = String.format("|%11s|%15s|%14s|%14s|%10s|", this.id, this.name, this.importDate,
@@ -119,9 +123,10 @@ public class Flower implements Serializable{
     }
 
     /**
-     * return string
+     * Returns a string representation of this Flower object in a
+     * comma-separated format.
      *
-     * @return
+     * @return A string representation of this Flower object.
      */
     @Override
     public String toString() {

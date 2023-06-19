@@ -17,22 +17,36 @@ public class Menu {
     private final ArrayList<String> options = new ArrayList<>();
     private final Scanner sc = new Scanner(System.in);
 
-    //constructor nhận vào title 
+    /**
+     * Constructs a new Menu object with the given title.
+     *
+     * @param title The title of this menu.
+     */
     public Menu(String title) {
         this.title = title;
     }
 
-    //getter
+    /**
+     * Returns the title of this Menu object.
+     *
+     * @return The title of this Menu object.
+     */
     public String getTitle() {
         return title;
     }
 
-    //method: addOption: lưu những thực đơn trong menu
+    /**
+     * Adds a new option to this Menu object.
+     *
+     * @param newOption The new option to be added to this Menu object.
+     */
     public void addOption(String newOption) {
         options.add(newOption);
     }
 
-    //method: in ra danh sách các option
+    /**
+     * Prints this Menu object to the console in a formatted manner.
+     */
     public void printMenu() {
         System.out.println(title);
         for (String s : options) {
@@ -42,6 +56,11 @@ public class Menu {
 
     //method: gotChoice: lấy lựa chọn của người dùng
     //không cho người dùng lấy lựa chọn ngoài optionList
+    /**
+     * Prompts the user to enter an option and returns the entered option.
+     *
+     * @return The option entered by the user.
+     */
     public int getUserChoice() {
         while (true) {
             try {
@@ -59,6 +78,13 @@ public class Menu {
         }
     }
 
+    /**
+     * Prompts the user to enter a yes or no response and returns the entered
+     * response as a boolean value.
+     *
+     * @param title The title of the menu to be displayed to the user.
+     * @return True if the user entered "Yes", false otherwise.
+     */
     public static boolean getYesOrNo(String title) {
         Menu sub = new Menu(title);
         sub.addOption("Yes");
@@ -67,6 +93,11 @@ public class Menu {
         return sub.getUserChoice() == 1;
     }
 
+    /**
+     * Returns a string representation of this Menu object.
+     *
+     * @return A string representation of this Menu object.
+     */
     @Override
     public String toString() {
         String msg = String.format("[Menu] : %s", title);

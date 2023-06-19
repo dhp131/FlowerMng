@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements Serializable {
+
     private static final long serialVersionUID = 1L;
     String id;
     String date;
@@ -14,10 +15,11 @@ public class Order implements Serializable {
     List<OrderDetail> oList;
 
     /**
+     * Constructs a new Order object with the given id, date, and customer name.
      *
-     * @param id
-     * @param date
-     * @param customerName
+     * @param id The unique identifier for this order.
+     * @param date The date this order was placed.
+     * @param customerName The name of the customer who placed this order.
      */
     public Order(String id, String date, String customerName) {
         this.id = id;
@@ -125,8 +127,10 @@ public class Order implements Serializable {
     }
 
     /**
+     * Adds an OrderDetail object to this Order and updates the count and total
+     * accordingly.
      *
-     * @param od
+     * @param od The OrderDetail object to be added to this Order.
      */
     public void addDetail(OrderDetail od) {
         oList.add(od);
@@ -135,8 +139,10 @@ public class Order implements Serializable {
     }
 
     /**
+     * Returns a string representation of the OrderDetail objects in this Order
+     * in a comma-separated format.
      *
-     * @return
+     * @return A string representation of the OrderDetail objects in this Order.
      */
     private String toStringDetail() {
         String str = "";
@@ -146,15 +152,20 @@ public class Order implements Serializable {
         return str.substring(0, str.length() - 1);
     }
 
+    /**
+     * Prints the information of this Order object to the console in a formatted
+     * manner.
+     */
     public void showInfo() {
         String str = String.format("| %-9s | %12s | %-20s | %12d | %11.3f |", this.id, this.date, this.customerName, this.count, this.total);
         System.out.println(str);
     }
 
     /**
-     * return String
+     * Returns a string representation of this Order object in a comma-separated
+     * format.
      *
-     * @return
+     * @return A string representation of this Order object.
      */
     @Override
     public String toString() {

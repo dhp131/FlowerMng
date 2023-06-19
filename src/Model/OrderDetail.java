@@ -10,11 +10,13 @@ public class OrderDetail implements Serializable, Comparable<OrderDetail> {
     double flowerCost;
 
     /**
+     * Constructs a new OrderDetail object with the given id, flower id,
+     * quantity, and flower cost.
      *
-     * @param id
-     * @param flowerId
-     * @param quantity
-     * @param flowerCost
+     * @param id The unique identifier for this order detail.
+     * @param flowerId The Flower object associated with this order detail.
+     * @param quantity The quantity of the flower in this order detail.
+     * @param flowerCost The cost of the flower in this order detail.
      */
     public OrderDetail(String id, Flower flowerId, int quantity, double flowerCost) {
         this.id = id;
@@ -72,16 +74,19 @@ public class OrderDetail implements Serializable, Comparable<OrderDetail> {
     }
 
     /**
+     * Calculates and returns the cost of the flower in this OrderDetail object.
      *
-     * @return
+     * @return The cost of the flower in this OrderDetail object.
      */
     public double getFlowerCost() {
         return flowerId.getUnitPrice() * quantity;
     }
 
     /**
+     * Returns a string representation of this OrderDetail object in a
+     * comma-separated format.
      *
-     * @return
+     * @return A string representation of this OrderDetail object.
      */
     @Override
     public String toString() {
@@ -91,9 +96,13 @@ public class OrderDetail implements Serializable, Comparable<OrderDetail> {
     }
 
     /**
+     * Compares this OrderDetail object with the specified OrderDetail object
+     * for order.
      *
-     * @param o
-     * @return
+     * @param o The OrderDetail object to be compared.
+     * @return A negative integer, zero, or a positive integer as this
+     * OrderDetail object is less than, equal to, or greater than the specified
+     * OrderDetail object.
      */
     @Override
     public int compareTo(OrderDetail o) {
